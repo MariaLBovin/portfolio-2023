@@ -1,0 +1,45 @@
+:root {
+  font-family: "Poppins", Arial, sans-serif;
+  font-size: 62.5%;
+  -webkit-font-smoothing: antialiased;
+  --swiper-navigation-color: black;
+  --swiper-navigation-size: 5px;
+  width: 100%;
+  overflow-x: hidden;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  flex: 1;
+  
+}
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+body {
+  display: flex;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+#app {
+  display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    flex: 1;
+}
+
+.hidden {
+  display: none;
+}
+h1, h2, h3, h4 {
+  margin: 0;
+}
+ul, li {
+  list-style: none;
+  
+      margin: 0;
+      padding-left: 0;
+}
