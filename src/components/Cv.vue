@@ -1,4 +1,5 @@
 <script setup>
+
 import { jobHistory, eduHistory, skills } from '../arrays/cvArray';
 import { ref } from 'vue';
 
@@ -9,7 +10,6 @@ const skillSlides = skills
 const showJobList = ref(false);
 const showEduList = ref(false);
 const showOtherList = ref(false);
-
 
 </script>
 
