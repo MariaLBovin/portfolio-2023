@@ -5,4 +5,10 @@ import vue from '@vitejs/plugin-vue'
 export default defineConfig({
   base: '/portfolio-2023/',
   plugins: [vue()],
+  resolve: {
+    alias: {
+      
+      'vue': 'vue/dist/vue.esm-bundler.js'
+    }
+  }
 })
