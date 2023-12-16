@@ -68,7 +68,7 @@ const allWork = [
         'https://github.com/MariaLBovin/react-tic-tac-toe',
     },
     {
-      image: [{ src: require('/zootropolis2.png'), alt: 'ett pettingzoo' }],
+      image: [{ src: ('/zootropolis2.png'), alt: 'ett pettingzoo' }],
       title: 'Wheatly',
       description: 'En applikation byggd i react för att hämta, visa och mata djur',
       projektlink:
@@ -77,7 +77,7 @@ const allWork = [
     {
       image: [
         {
-          src: require('/arbetsgivardata.png'),
+          src: ('/arbetsgivardata.png'),
           alt: 'startsida på en webapplikation till arbetsförmedlingen',
         },
       ],
