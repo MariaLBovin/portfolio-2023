@@ -3,8 +3,10 @@
 </script>
 
 <template>
- <router-view/>
-</template>
 
-<style scoped>
-</style>
+  
+      <router-view></router-view>
+
+
+  </template>
+  

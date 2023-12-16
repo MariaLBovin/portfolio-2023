@@ -1,5 +1,4 @@
 <script setup>
-
 import { jobHistory, eduHistory, skills } from '../arrays/cvArray';
 import { ref } from 'vue';
 
