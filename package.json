@@ -3,22 +3,28 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "homepage": "https://marialbovin.github.io/portfolio-2023/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
+
   },
   "dependencies": {
-    "@splidejs/vue-splide": "^0.6.12",
+    
+    "gh-pages": "^6.1.0",
     "normalize.css": "^8.0.1",
     "swiper": "^11.0.5",
     "vue": "^3.3.4",
-    "vue-router": "^4.2.5",
-    "vue3-carousel": "^0.3.1"
+    "vue-router": "^4.2.5"
+    
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.2.3",
     "sass": "^1.69.5",
     "vite": "^4.4.5"
   }
+  
 }

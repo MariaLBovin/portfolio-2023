@@ -9,6 +9,8 @@ export default defineConfig({
       
     }
   },
-  base: '/portfolio-2023/',
-  
+  base: "https://marialbovin.github.io/portfolio-2023/",
+  define: {
+    "process.env": {}
+  }
 })
