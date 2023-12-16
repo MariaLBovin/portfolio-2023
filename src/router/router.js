@@ -32,7 +32,7 @@ const routes = [
 ];
 
 const router = createRouter({
-  history: createWebHashHistory(),
+  history: createWebHashHistory('/portfolio-2023'),
   routes,
 });
 

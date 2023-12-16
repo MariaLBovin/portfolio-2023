@@ -10,14 +10,5 @@ export default defineConfig({
     }
   },
   base: '/portfolio-2023/',
-  define: {
-    'process.env': {},
-  },
-  css: {
-    preprocessorOptions: {
-      scss: {
-        
-      },
-    },
-  },
+  
 })
