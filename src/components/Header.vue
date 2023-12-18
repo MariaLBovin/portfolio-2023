@@ -11,25 +11,22 @@ const toggleMenu = () => {
 
 <template>
   <header class="header">
-    <div class="header__wrapper">
-        
+    <div class="header__wrapper"> 
       <router-link to="/" class="header__logo">
-      <img src="/logo.png" alt="Maria L Bovin">
-    
-      <p class="header__title">Maria Larsson Bovin</p>
-    </router-link>
-    
+        <img src="/logo.png" alt="Maria L Bovin">
+        <p class="header__title">Maria Larsson Bovin</p>
+      </router-link>
       <nav :class="{ 'hidden': !menu, 'header__nav': menu }" aria-label="main">
         <ul :class="{ 'header__navlist--showmenu': menu }">
             <div class="header-nav-wrapper">
-            <li class="header__navitem">
-                <router-link to="/portfolio/" class="header__navitem-link">Portfolio</router-link>
+            <li class="header__navitem" >
+                <router-link to="/portfolio/" class="header__navitem-link" @click="toggleMenu">Portfolio</router-link>
             </li>
             <li class="header__navitem">
-                <router-link to="/cv/" class="header__navitem-link">CV</router-link>
+                <router-link to="/cv/" class="header__navitem-link" @click="toggleMenu">CV</router-link>
             </li>
             <li class="header__navitem">
-              <router-link to="/contact/" class="header__navitem-link">Kontakt</router-link>
+              <router-link to="/contact/" class="header__navitem-link" @click="toggleMenu">Kontakt</router-link>
             </li>
             </div>
         </ul>
@@ -65,15 +62,9 @@ const toggleMenu = () => {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin: 20px;
     overflow: hidden;
     align-items: center;
 
-
-    @media screen and (min-width: 700px) {
-      margin: 20px 64px;
-      padding: 0 64px;
-    }
   }
 
   &__logo {
@@ -84,8 +75,12 @@ const toggleMenu = () => {
     text-decoration: none;
 
     &:hover {
-      
       text-decoration: underline;
+    }
+
+    &:visited {
+      text-decoration: none;
+      
     }
 
     @media screen and (min-width: 700px) {
@@ -109,7 +104,7 @@ const toggleMenu = () => {
   }
 
   &-nav-wrapper {
-    margin-top: 30px;
+    margin-top: 40px;
     padding:0 32px;
     display: flex;
     flex-direction: column;

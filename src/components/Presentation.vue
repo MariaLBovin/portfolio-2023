@@ -57,7 +57,7 @@ onMounted(() => {
     <section class="presentation">
         <p class="presentation__greeting">Hej!</p>
         <h1 class="presentation__title">Jag är Maria,</h1>
-        <p class="presentation__description">Stockholmsbaserad student som just nu nördar ner mig i
+        <p class="presentation__description">Stockholmsbaserad student som just nu nördar ner mig <br>i
             <span class="presentation__text presentation__text--highlight" ref="textElement" v-html="currentWord"></span>
             <span class="presentation__details d-block">med målet att bli färdig frontend-utvecklare juni 2024.</span>
         </p>

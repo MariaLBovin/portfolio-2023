@@ -100,14 +100,14 @@ const showOtherList = ref(false);
 <style lang="scss" scoped>
 .cv {
     display: flex;
-      flex-direction: column;
-      padding-bottom: 20px;
-      margin: 32px;
+    flex-direction: column;
+    padding-bottom: 20px;
+    margin: 32px 0;
 
-      @media screen and (min-width: 700px) {
-        margin: 32px 64px;
-        padding: 0 64px;
-      }
+     @media screen and (min-width: 700px) {
+        margin: 64px 0;
+     }
+
       
     &-item {
         margin-bottom: 32px;
@@ -167,7 +167,12 @@ const showOtherList = ref(false);
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 12px;
+    gap: 16px;
+    
+
+    @media screen and (min-width: 700px) {
+      gap: 64px;
+    }
     }
     &-list{
         &heading {
@@ -218,6 +223,9 @@ const showOtherList = ref(false);
         @media screen and (min-width: 700px) {
           font-size: 2.5rem;
         }
+    }
+    &-right {
+      border-bottom: 0.5px solid lightgrey;
     }
 }
 

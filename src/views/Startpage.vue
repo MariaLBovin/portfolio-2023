@@ -22,12 +22,9 @@ import SliderStart from '../components/SliderStart.vue';
 
 <style lang="scss" scoped>
 .startpage{
-  margin: 20px;
-
+ margin-bottom: 32px; 
   @media screen and (min-width: 700px) {
-    margin: 64px; 
-    padding: 64px;
-  
+    margin-bottom: 64px;;
   }
   &__contact {
   text-align: center;

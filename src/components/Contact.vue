@@ -37,11 +37,12 @@
 
 <style lang="scss" scoped>
 .contact {
-    margin: 32px;
+    margin: 32px 0;
+
 
      @media screen and (min-width: 700px) {
-        margin: 64px;
-        padding: 0 64px;
+        margin: 64px 0;
+        
      }
      &-wrapper {
         display: flex;
@@ -55,11 +56,11 @@
      }
      &-heading {
         font-size: 3rem;
-        margin-bottom: 32px;
+        margin-bottom: 64px;
 
         @media screen and (min-width: 700px) {
             font-size: 5rem;
-            margin-bottom: 64px;
+            margin-bottom: 120px;
         }
      }
      &-text {

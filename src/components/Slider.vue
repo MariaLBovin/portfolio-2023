@@ -62,13 +62,12 @@ const swiperElement = ref(null);
       display: flex;
       flex-direction: column;
       padding-bottom: 20px;
-      margin: 32px 64px;
+      margin: 32px 0;
 
-      @media screen and (min-width: 700px){
-        padding: 0 64px 20px 64px;
+      @media screen and (min-width: 700px) {
+        margin: 64px 0;
       }
-      
-      
+
       &-wrapper{
         display: flex;
         justify-content: center;
@@ -130,12 +129,12 @@ const swiperElement = ref(null);
     }
   }
   &-heading{
-    font-size: 1.8rem;
+    font-size: 2rem;
     display: flex;
     flex-direction: column;
 
     @media screen and (min-width: 700px) {
-      font-size: 3rem;
+      font-size: 4rem;
     }
 
   }
@@ -143,7 +142,7 @@ const swiperElement = ref(null);
     font-size: 1.8rem;
 
     @media screen and (min-width: 700px){
-      font-size: 2rem;
+      font-size: 3rem;
     }
 
   }
@@ -176,21 +175,25 @@ const swiperElement = ref(null);
     border: none;
     font-size: 1.4rem;
 
+
     @media screen and (min-width: 700px) {
       width: 64px;
       height: 64px;
     }
 }
 .arrow-back {
-    top:calc(50%);
+    left: 32px;
+    right: auto;
+    top:calc(50% + 120px);
     transform: translate(-50%, -50%);
+
    @media screen and (min-width: 700px) {
       left: 160px;
 
    }
 }
 .arrow-forward {
-    top:calc(50%);
+    top:calc(50% + 120px);
     transform: translate(-50%, -50%);
   @media screen and (min-width: 700px) {
     right: 90px;
