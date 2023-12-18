@@ -69,7 +69,7 @@ const allWork = [
     },
     {
       image: [{ src: ('./zootropolis2.png'), alt: 'ett pettingzoo' }],
-      title: 'Wheatly',
+      title: 'The zoo',
       description: 'En applikation byggd i react för att hämta, visa och mata djur',
       projektlink:
         'https://github.com/MariaLBovin/the-zoo',
