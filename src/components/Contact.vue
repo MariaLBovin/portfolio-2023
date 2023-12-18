@@ -41,6 +41,7 @@
 
      @media screen and (min-width: 700px) {
         margin: 64px;
+        padding: 0 64px;
      }
      &-wrapper {
         display: flex;

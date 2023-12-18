@@ -29,17 +29,20 @@ const eduHistory = [
   {
   place: 'Medieinstituet',
   time: '2022-2024',
-  title: 'Frontend developer'
+  title: 'Frontend developer',
+  desc: 'HTML5 - CSS/SCSS - Vanilla JS - Typescript - Vue - React '
 },
 {
   place: 'Medieinstituet',
   time: '2007-2009',
-  title: 'Marknadsstrateg digitala medier'
+  title: 'Marknadsstrateg digitala medier',
+  desc: 'Marknadsstrategi - Försäljning - Kommunikationsvetenskap - Beteendevetenskap - Företagsekonomi'
 },
 {
   place: 'Stockholms universitet',
   time: '2006-2006',
-  title: 'Engelska A & B'
+  title: 'Engelska A & B',
+  desc: 'Lingvistik - Litteratur - Grammatik'
 },
 ]
 

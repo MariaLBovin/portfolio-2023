@@ -62,8 +62,10 @@ const showOtherList = ref(false);
                   <p class="cv-time">{{ slide.time }}</p>
                 </div>
                 <div class="cv-right">
+                  <div class="cv-right">
                   <h4 class="cv-title">{{ slide.title }}</h4>
-                  
+                  <p class="cv-description">{{ slide.desc }}</p>
+                </div>
                 </div>
               </article>
             </li>
@@ -104,6 +106,7 @@ const showOtherList = ref(false);
 
       @media screen and (min-width: 700px) {
         margin: 32px 64px;
+        padding: 0 64px;
       }
       
     &-item {
@@ -193,20 +196,27 @@ const showOtherList = ref(false);
         font-weight: 400;
 
         @media screen and (min-width: 700px){
-          font-size: 2rem;
+          font-size: 3rem;
         }
     }
     &-description {
-        font-size: 1.2rem;
+        font-size: 1.6rem;
+
+        @media screen and (min-width: 700px) {
+          font-size: 2.5rem;
+        }
     }
     &-skills {
-        font-size: 1.3rem;
+        font-size: 1.6rem;
         font-weight: 400;
         margin-bottom: 16px;
 
         &:after {
             content:'\2713';
             padding-left: 16px
+        }
+        @media screen and (min-width: 700px) {
+          font-size: 2.5rem;
         }
     }
 }

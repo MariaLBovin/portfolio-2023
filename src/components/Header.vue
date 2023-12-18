@@ -72,6 +72,7 @@ const toggleMenu = () => {
 
     @media screen and (min-width: 700px) {
       margin: 20px 64px;
+      padding: 0 64px;
     }
   }
 

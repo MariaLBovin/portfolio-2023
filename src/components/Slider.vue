@@ -40,17 +40,17 @@ const swiperElement = ref(null);
             <img :src="slide.image[0].src" :alt="slide.image[0].alt" class="swiper-img" />
           </div>
           <div class="swiper-text-wrapper">
-          <h2 class="swiper-heading">{{ slide.title}}</h2>
-          <p class="swiper-text">{{ slide.description}}</p>
-          <a :href="slide.projektlink" class="swiper-link">Titta på projektet</a>
-        
+            <h2 class="swiper-heading">{{ slide.title}}</h2>
+            <p class="swiper-text">{{ slide.description}}</p>
+            <a :href="slide.projektlink" class="swiper-link">Titta på projektet</a>
+          
         </div>
         </swiper-slide>
       </swiper-container>
         </article>
+          <button class="swiper-button-prev arrow-back material-icons" @click="prevSlide">arrow_back</button>
+          <button class="swiper-button-next material-icons arrow-forward" @click="nextSlide">arrow_forward</button>
       
-      <button class="swiper-button-prev arrow-back material-icons" @click="prevSlide">arrow_back</button>
-      <button class="swiper-button-next material-icons arrow-forward" @click="nextSlide">arrow_forward</button>
         </div>
         
   </section>
@@ -63,6 +63,10 @@ const swiperElement = ref(null);
       flex-direction: column;
       padding-bottom: 20px;
       margin: 32px 64px;
+
+      @media screen and (min-width: 700px){
+        padding: 0 64px 20px 64px;
+      }
       
       
       &-wrapper{
@@ -108,7 +112,6 @@ const swiperElement = ref(null);
   &-img {
     display: block;
     width: 100%;
-    
     border-top-left-radius: 1.25rem;
     border-top-right-radius: 1.25rem;
 
@@ -179,13 +182,19 @@ const swiperElement = ref(null);
     }
 }
 .arrow-back {
+    top:calc(50%);
+    transform: translate(-50%, -50%);
    @media screen and (min-width: 700px) {
-      left: 64px;
+      left: 160px;
+
    }
 }
 .arrow-forward {
+    top:calc(50%);
+    transform: translate(-50%, -50%);
   @media screen and (min-width: 700px) {
-    right: 64px;
+    right: 90px;
+    
   }
 }
 .slider-router-link {

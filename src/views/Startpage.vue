@@ -25,7 +25,8 @@ import SliderStart from '../components/SliderStart.vue';
   margin: 20px;
 
   @media screen and (min-width: 700px) {
-    margin: 64px, 
+    margin: 64px; 
+    padding: 64px;
   
   }
   &__contact {
