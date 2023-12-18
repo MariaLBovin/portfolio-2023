@@ -16,7 +16,7 @@ const toggleMenu = () => {
         <img src="/logo.png" alt="Maria L Bovin">
         <p class="header__title">Maria Larsson Bovin</p>
       </router-link>
-      <nav :class="{ 'hidden': !menu, 'header__nav': menu }" aria-label="main">
+      <nav :class="{ 'hidden': !menu, 'header__nav': menu }" aria-label="main" :aria-hidden="!menu">
         <ul :class="{ 'header__navlist--showmenu': menu }">
             <div class="header-nav-wrapper">
             <li class="header__navitem" >
@@ -46,7 +46,7 @@ const toggleMenu = () => {
             </div>
         </ul>
     </nav>
-    <button class="header__navbutton" @click="toggleMenu" aria-label="toggle-button" aria-controls="mainNavigation">
+    <button class="header__navbutton" @click="toggleMenu" aria-label="toggle-button" aria-controls="mainNavigation" :aria-expanded="menu.toString()">
         <span class="header__menu-icon material-icons" v-show="!menu">menu</span>
         <span class="header__close-icon material-icons" v-show="menu">close</span>
       </button>

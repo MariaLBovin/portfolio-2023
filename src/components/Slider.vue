@@ -20,39 +20,34 @@ const nextSlide = () => {
 const swiperElement = ref(null);
 </script>
 <template>
-      <section class="slideshow">
-        <h1 class="slideshow-heading">Mina projekt</h1>
-        <div class="slideshow-wrapper">
-          <article class="swiper-wrapper">
-          <swiper-container 
+  <section class="slideshow">
+    <h1 class="slideshow-heading">Mina projekt</h1>
+      <article class="slideshow-wrapper">
+        <swiper-container 
             aria-roledescription="ul"
             ref="swiperElement" 
             class="swiper"
             :slides-per-view=1
-            :loop="true"
-      >
-        <swiper-slide 
+            :loop="true">
+          <swiper-slide 
             class="swiper-slide" 
             v-for="slide in slides" 
             :key="slide.title"
             aria-roledescription="li">
-          <div class="swiper-img">
-            <img :src="slide.image[0].src" :alt="slide.image[0].alt" class="swiper-img" />
-          </div>
-          <div class="swiper-text-wrapper">
-            <h2 class="swiper-heading">{{ slide.title}}</h2>
-            <p class="swiper-text">{{ slide.description}}</p>
-            <a :href="slide.projektlink" class="swiper-link">Titta på projektet</a>
-          
-        </div>
-        </swiper-slide>
-      </swiper-container>
-        </article>
-          <button class="swiper-button-prev arrow-back material-icons" @click="prevSlide">arrow_back</button>
-          <button class="swiper-button-next material-icons arrow-forward" @click="nextSlide">arrow_forward</button>
-      
-        </div>
-        
+            <div class="swiper-img">
+              <img :src="slide.image[0].src" :alt="slide.image[0].alt" class="swiper-img" />
+            </div>
+            <article class="swiper-text-wrapper">
+              <h2 class="swiper-heading">{{ slide.title}}</h2>
+              <p class="swiper-text">{{ slide.description}}</p>
+              <a :href="slide.projektlink" class="swiper-link">Titta på projektet</a>
+            </article>
+          </swiper-slide>
+        </swiper-container>
+        <button class="swiper-button-prev arrow-back material-icons" @click="prevSlide" aria-label="back-arrow">arrow_back</button>
+        <button class="swiper-button-next material-icons arrow-forward" @click="nextSlide" aria-label="forward-arrow">arrow_forward</button>
+      </article>
+
   </section>
 
 </template>
