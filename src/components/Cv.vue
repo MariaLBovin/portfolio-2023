@@ -47,7 +47,7 @@ const showOtherList = ref(false);
           <h2 class="cv-listheading">
             <button
               class="cv-button"
-              aria-expanded="false"
+              :aria-expanded="showEduList.toString()"
               aria-controls="ul-edu"
               @click="showEduList = !showEduList"
             >
@@ -75,7 +75,7 @@ const showOtherList = ref(false);
           <h2 class="cv-listheading">
             <button
               class="cv-button"
-              aria-expanded="false"
+              :aria-expanded="showOtherList.toString()"
               aria-controls="ul-other"
               @click="showOtherList = !showOtherList"
             >
@@ -103,6 +103,7 @@ const showOtherList = ref(false);
     flex-direction: column;
     padding-bottom: 20px;
     margin: 32px 0;
+    flex: 1;
 
      @media screen and (min-width: 700px) {
         margin: 64px 0;

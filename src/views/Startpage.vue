@@ -23,6 +23,8 @@ import SliderStart from '../components/SliderStart.vue';
 <style lang="scss" scoped>
 .startpage{
  margin-bottom: 32px; 
+ flex: 1;
+ 
   @media screen and (min-width: 700px) {
     margin-bottom: 64px;;
   }

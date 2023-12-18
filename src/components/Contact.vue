@@ -39,6 +39,7 @@
 <style lang="scss" scoped>
 .contact {
     margin: 32px 0;
+    flex: 1;
 
      @media screen and (min-width: 700px) {
         margin: 64px 0;
