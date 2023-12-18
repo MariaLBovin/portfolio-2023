@@ -1,7 +1,7 @@
 :root {
   font-family: "Poppins", Arial, sans-serif;
   font-size: 62.5%;
-  -webkit-font-smoothing: antialiased;
+  
   --swiper-navigation-color: black;
   --swiper-navigation-size: 5px;
   width: 100%;
@@ -19,6 +19,10 @@
     box-sizing: border-box;
     -moz-box-sizing: border-box; 
     -webkit-box-sizing: border-box; 
+}
+html {
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
 }
 body {
   display: flex;
