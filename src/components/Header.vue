@@ -158,7 +158,7 @@ const toggleMenu = () => {
     }
   }
 
-  &__menu-icon {
+  &__menu-icon, &__close-icon {
     color: black;
   }
 
