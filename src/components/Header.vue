@@ -23,13 +23,13 @@ const toggleMenu = () => {
         <ul :class="{ 'header__navlist--showmenu': menu }">
             <div class="header-nav-wrapper">
             <li class="header__navitem">
-                <router-link to="/portfolio/">Portfolio</router-link>
+                <router-link to="/portfolio/" class="header__navitem-link">Portfolio</router-link>
             </li>
             <li class="header__navitem">
-                <router-link to="/cv/">CV</router-link>
+                <router-link to="/cv/" class="header__navitem-link">CV</router-link>
             </li>
             <li class="header__navitem">
-              <router-link to="/contact/">Kontakt</router-link>
+              <router-link to="/contact/" class="header__navitem-link">Kontakt</router-link>
             </li>
             </div>
         </ul>
@@ -89,26 +89,26 @@ const toggleMenu = () => {
 
     @media screen and (min-width: 700px) {
       margin: 0;
-      flex: 0 0 20%;
+      flex: 0 0 40%;
     }
 
     img {
-      width: 40px;
+      width: 50px;
     }
   }
 
   &__title {
     padding-left: 5px;
-    font-size: 1rem;
+    font-size: 2rem;
 
     @media screen and (min-width: 700px) {
-      font-size: 1.8rem;
+      font-size: 3rem;
       padding-left: 10px;
     }
   }
 
   &-nav-wrapper {
-    margin-top: 20px;
+    margin-top: 30px;
     padding:0 32px;
     display: flex;
     flex-direction: column;
@@ -167,8 +167,9 @@ const toggleMenu = () => {
   }
 
   &__navitem {
-    font-size: 1.5rem;
+    font-size: 2rem;
     display: block;
+    padding-bottom: 5px;
 
     &-link {
       color: black;
@@ -182,7 +183,7 @@ const toggleMenu = () => {
     
 
     @media screen and (min-width: 700px) {
-      font-size: 1.8rem;
+      font-size: 3rem;
     }
   }
 

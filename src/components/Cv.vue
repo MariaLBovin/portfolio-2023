@@ -30,7 +30,7 @@ const showOtherList = ref(false);
           </h2>
           <ul :class="['cv-joblist', { 'hidden': !showJobList }]" id="ul-job">
             <li class="cv-listitem" v-for="slide in jobSlides" :key="slide.place">
-              <article class="cv-wrapper">
+              <article class="cv-wrapper-inner">
                 <div class="cv-left">
                   <h3 class="cv-place">{{ slide.place }}</h3>
                   <p class="cv-time">{{ slide.time }}</p>
@@ -56,7 +56,7 @@ const showOtherList = ref(false);
           </h2>
           <ul :class="['cv-educationlist', { 'hidden': !showEduList }]" id="ul-edu">
             <li class="cv-listitem" v-for="slide in eduSlides" :key="slide.place">
-              <article class="cv-wrapper">
+              <article class="cv-wrapper-inner">
                 <div class="cv-left">
                   <h3 class="cv-place">{{ slide.place }}</h3>
                   <p class="cv-time">{{ slide.time }}</p>
@@ -82,7 +82,7 @@ const showOtherList = ref(false);
           </h2>
           <ul :class="['cv-otherlist', { 'hidden': !showOtherList }]" id="ul-other">
             <li class="cv-listitem" v-for="slide in skillSlides" :key="slide.skills">
-              <article class="cv-wrapper">
+              <article class="cv-wrapper-inner">
                 <div class="cv-left">
                   <h3 class="cv-skills">{{ slide.skills }}</h3>
                 </div>
@@ -128,16 +128,23 @@ const showOtherList = ref(false);
         @media screen and (min-width: 700px){
             width: 70%;
         }
+
+        &-inner{
+          width: 100%;
+        }
     }
     &-button{
         display: flex;
         border:none;
         background-color: transparent;
+        color: black;
         font: inherit;
+        font-size: 2rem;
         padding: 0;
         width: 100%;
         justify-content: space-between;
         cursor: pointer;
+        
         
 
         &:after {
@@ -146,6 +153,10 @@ const showOtherList = ref(false);
         &[aria-expanded="true"]:after{
             content: '-';
 
+        }
+
+        @media screen and (min-width: 700px) {
+          font-size: 4rem;
         }
     }
 
@@ -165,13 +176,25 @@ const showOtherList = ref(false);
     &-place {
         font-size: 2rem;
         font-weight: 400;
+
+        @media screen and (min-width: 700px) {
+          font-size: 3rem;
+        }
     }
     &-time {
-        font-size: 1.5rem;
+        font-size: 1.6rem;
+
+        @media screen and (min-width: 700px) {
+          font-size: 2rem;
+        }
     }
     &-title {
-        font-size: 1.3rem;
+        font-size: 1.8rem;
         font-weight: 400;
+
+        @media screen and (min-width: 700px){
+          font-size: 2rem;
+        }
     }
     &-description {
         font-size: 1.2rem;

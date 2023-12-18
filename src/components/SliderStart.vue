@@ -109,8 +109,8 @@ const swiperElement = ref(null);
   }
 
   &-text-wrapper {
-    padding-left:1.25rem;
-    padding-right:1.25rem;
+    padding-left:32px;
+    padding-right:32px;
     font-family: 'Poppins';
     margin-bottom: 32px;
 
@@ -130,16 +130,16 @@ const swiperElement = ref(null);
 
   }
   &-text {
-    font-size: 1.8rem;
+    font-size: 2rem;
 
     @media screen and (min-width: 700px){
-      font-size: 2rem;
+      font-size: 3rem;
     }
 
   }
   &-link {
   cursor: pointer;
-  font-size: 1.5rem;
+  font-size: 2rem;
   color: black;
 
   &:hover {
@@ -148,7 +148,7 @@ const swiperElement = ref(null);
   }
 
   @media screen and (min-width: 700px) {
-    font-size: 2rem;
+    font-size: 3rem;
   }
 }
 

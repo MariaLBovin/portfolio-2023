@@ -73,12 +73,12 @@ onMounted(() => {
 
     &__greeting {
         text-transform: uppercase;
-        font-size:1rem;
+        font-size:2rem;
         letter-spacing: 0.18rem;
         margin-top: 0;
 
         @media screen and (min-width: 700px) {
-          font-size: 1.8rem;
+          font-size: 3rem;
         }
     }
 
@@ -97,10 +97,10 @@ onMounted(() => {
         transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
         font-weight: 400;
         margin-bottom: 1rem;
-        font-size: 1.8rem;
+        font-size: 2rem;
 
         @media screen and (min-width: 700px) {
-          font-size: 2rem;
+          font-size: 3rem;
         }
     }
 
