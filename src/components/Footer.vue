@@ -30,10 +30,9 @@
 
 <style lang='scss' scoped>
 .footer {
-    
     padding: 16px 0;
     box-shadow: 0px -5px 2px -3px #848383;
-    
+
     &-logos {
     opacity: 0.5;
     display: flex;

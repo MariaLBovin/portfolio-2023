@@ -42,6 +42,7 @@
 
      @media screen and (min-width: 700px) {
         margin: 64px 0;
+        min-height: 60vh;
         
      }
      &-wrapper {
