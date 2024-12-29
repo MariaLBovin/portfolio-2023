@@ -1,22 +1,25 @@
 const selectedWork = [
     {
-      image: [{ src: ('./donutshop.webp'), alt: 'en munkshop' }],
-      title: 'Gottfrids munkar',
+      image: [{ src: ('./bokai.png'), alt: 'en boktipsartjänst' }],
+      title: 'Bokai',
       description:
-        'Mock-ehandel för en munkshop byggt i Vanilla JS, HTML 5 och SASS.',
-      projektlink: 'https://marialbovin.github.io/Gottfrids_munkar/',
+        'Examensarbete från Medieinstitutet, Frontend developer vt 24',
+      techstack: 'HTML5, CSS, TypeScript, React, Firestore',
+      projektlink: 'https://marialbovin.github.io/ex-jobb/',
     },
     {
-      image: [{ src:( './wheatly2.webp'), alt: 'en produktslider' }],
-      title: 'Wheatly',
-      description: 'Kodprojekt efter given design i Vue',
+      image: [{ src:( './varskavistanna.png'), alt: 'en ruttplanerare för elbilar' }],
+      title: 'Var ska vi stanna',
+      description: 'En ruttplanerare för elbilar, med möjlighet att filtrera stopp',
+      techstack: "HTML5, CSS, TypeScript, React, Node.js, Firebase Functions, Firestore",
       projektlink:
-        'https://medieinstitutet.github.io/fed22d-grafiska-verktyg-tomatpureerna/',
+        'https://varskavistanna.vercel.app/',
     },
     {
       image: [{ src: ('./tic-tac-toe.png'), alt: 'ett spel' }],
       title: 'Tic-tac-toe',
       description: 'Kodprojekt efter given design i Vue',
+      techstack:'HTML5, CSS, TypeScript, Vue',
       projektlink:
         'https://github.com/MariaLBovin/react-tic-tac-toe',
     },
@@ -30,6 +33,7 @@ const selectedWork = [
       ],
       title: 'Arbetsgivardata',
       description: 'En webapplikation som hämtar och visar data från Arbetsförmedlingens historiska data.',
+      techstack: 'HTML5, CSS, TypeScript, React',
       projektlink: 'https://github.com/MariaLBovin/case-af-jobhistory',
     },
     

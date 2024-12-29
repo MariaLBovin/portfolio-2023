@@ -2,6 +2,7 @@
 
 import Presentation from '../components/Presentation.vue';
 import SliderStart from '../components/SliderStart.vue';
+import Cv from '../components/Cv.vue'
 
 </script>
 
@@ -9,6 +10,7 @@ import SliderStart from '../components/SliderStart.vue';
   <div class="startpage">
     <Presentation/>
     <SliderStart/>
+    <Cv/>
     <section class="startpage__contact">
       <h3 class="startpage__contact-heading">Vill du ta en fika?</h3>
       <button class="startpage__contact-button">

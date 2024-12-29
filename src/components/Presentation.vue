@@ -2,7 +2,7 @@
 import { ref, onMounted } from 'vue';
 const textElement = ref(null);
 
-const word = ['Vue', 'React', 'Vanilla JS', 'Axios', 'UI/UX'];
+const word = ['tillgänglighet', 'användarvänlighet', 'problemlösning', ];
 let i = ref(0);
 let j = ref(0);
 let currentWord = ref([]);
@@ -11,20 +11,19 @@ let isEnd = ref(false);
 
 const loop = () => {
   isEnd.value = false;
-
-  textElement.value.innerHTML = currentWord.value.join('');
+  let shouldUpdate = false;
 
   if (i.value < word.length) {
     if (!isDeleting.value && j.value <= word[i.value].length) {
       currentWord.value.push(word[i.value][j.value]);
       j.value++;
-      textElement.value.innerHTML = currentWord.value.join('');
+      shouldUpdate = true;
     }
 
     if (isDeleting.value && j.value <= word[i.value].length) {
       currentWord.value.pop();
       j.value--;
-      textElement.value.innerHTML = currentWord.value.join('');
+      shouldUpdate = true;
     }
 
     if (j.value === word[i.value].length) {
@@ -40,12 +39,16 @@ const loop = () => {
         i.value = 0;
       }
     }
-    const spedUp = Math.random() * (80 - 50) + 50;
-    const normalSpeed = Math.random() * (300 - 200) + 200;
-    const time = isEnd.value ? 2000 : isDeleting.value ? spedUp : normalSpeed;
+
+    if (shouldUpdate) {
+      textElement.value.textContent = currentWord.value.join('');
+    }
+
+    const time = isEnd.value ? 500 : isDeleting.value ? 100 : 100;
     setTimeout(loop, time);
   }
-}
+};
+
 
 onMounted(() => {
   loop();
@@ -58,9 +61,9 @@ onMounted(() => {
     <article class="presentation-inner">
       <p class="presentation__greeting">Hej!</p>
       <h1 class="presentation__title">Jag är Maria,</h1>
-      <p class="presentation__description">Stockholmsbaserad student som just nu nördar ner mig i
-        <span class="presentation__text presentation__text--highlight" ref="textElement" v-html="currentWord"></span>
-        <span class="presentation__details d-block">med målet att bli färdig frontend-utvecklare juni 2024.</span>
+      <p class="presentation__description">Stockholmsbaserad frontendutvecklare med förkärlek för
+        <span class="presentation__text presentation__text--highlight" ref="textElement" v-html="currentWord" aria-live="polite"></span>
+        <span class="presentation__details d-block">som älskar att skapa roliga och användbara projekt.</span>
       </p>
     </article>
   </section>
