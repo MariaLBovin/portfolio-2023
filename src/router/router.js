@@ -1,10 +1,7 @@
 import { createRouter, createWebHashHistory } from 'vue-router';
 import MainLayout from '../views/MainLayout.vue';
 import Startpage from '../views/Startpage.vue';
-import Contact from '../components/Contact.vue'
-import CV from '../components/Cv.vue'
-import Slider from '../components/Slider.vue';
-
+import SliderStart from '../components/SliderStart.vue';
 
 const routes = [
   {
@@ -15,17 +12,10 @@ const routes = [
         path: '',
         component: Startpage,
       },
-        {
-            path: '/portfolio',
-            component: Slider,
-        },
-        {
-            path: '/cv',
-            component: CV,
-        },
-        {
-          path: '/contact',
-          component: Contact,
+      {
+        path: '/projects/:id', 
+        component: SliderStart,
+        props: true, 
       },
     ],
   },

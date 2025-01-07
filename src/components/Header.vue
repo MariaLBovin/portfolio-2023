@@ -5,55 +5,72 @@ const menu = ref(false);
 
 const toggleMenu = () => {
   menu.value = !menu.value;
-  console.log('klickade');
-}
+};
+
+const scrollToSection = (id) => {
+  const section = document.getElementById(id);
+  if (section) {
+    section.scrollIntoView({ behavior: 'smooth' });
+
+    if (window.innerWidth < 768){
+      toggleMenu();
+    }
+    
+  }
+};
 </script>
 
 <template>
   <header class="header">
-    <div class="header__wrapper"> 
+    <div class="header__wrapper">
       <router-link to="/" class="header__logo">
         <img src="/logo.png" alt="Maria L Bovin">
         <p class="header__title">Maria Larsson Bovin</p>
       </router-link>
       <nav :class="{ 'hidden': !menu, 'header__nav': menu }" aria-label="main" :aria-hidden="!menu">
         <ul :class="{ 'header__navlist--showmenu': menu }">
-            <div class="header-nav-wrapper">
-            <li class="header__navitem" >
-                <router-link to="/portfolio/" class="header__navitem-link" @click="toggleMenu">Portfolio</router-link>
+          <div class="header-nav-wrapper">
+            <li class="header__navitem">
+              <a @click.prevent="scrollToSection('project')" class="header__navitem-link">Portfolio</a>
             </li>
             <li class="header__navitem">
-                <router-link to="/cv/" class="header__navitem-link" @click="toggleMenu">CV</router-link>
+              <a @click.prevent="scrollToSection('cv')" class="header__navitem-link">CV</a>
             </li>
             <li class="header__navitem">
-              <router-link to="/contact/" class="header__navitem-link" @click="toggleMenu">Kontakt</router-link>
+              <a @click.prevent="scrollToSection('contact')" class="header__navitem-link">Kontakt</a>
             </li>
-            </div>
+          </div>
         </ul>
-    </nav>
-    <nav class="header__desktop-nav" aria-label="desktopMain">
+      </nav>
+      <nav class="header__desktop-nav" aria-label="desktopMain">
         <ul class="header__desktop-navlist">
-            <div class="header__desktop-navwrapper">
+          <div class="header__desktop-navwrapper">
             <li class="header__navitem">
-                <router-link to="/portfolio/" class="header__navitem-link">Portfolio</router-link>
+              <a @click.prevent="scrollToSection('project')" class="header__navitem-link">Portfolio</a>
             </li>
             <li class="header__navitem">
-                <router-link to="/cv/" class="header__navitem-link">CV</router-link>
+              <a @click.prevent="scrollToSection('cv')" class="header__navitem-link">CV</a>
             </li>
             <li class="header__navitem">
-              <router-link to="/contact/" class="header__navitem-link">Kontakt</router-link>
+              <a @click.prevent="scrollToSection('contact')" class="header__navitem-link">Kontakt</a>
             </li>
-            </div>
+          </div>
         </ul>
-    </nav>
-    <button class="header__navbutton" @click="toggleMenu" aria-label="toggle-button" aria-controls="mainNavigation" :aria-expanded="menu.toString()">
+      </nav>
+      <button
+        class="header__navbutton"
+        @click="toggleMenu"
+        aria-label="toggle-button"
+        aria-controls="mainNavigation"
+        :aria-expanded="menu.toString()"
+      >
         <span class="header__menu-icon material-icons" v-show="!menu">menu</span>
         <span class="header__close-icon material-icons" v-show="menu">close</span>
       </button>
     </div>
-
   </header>
 </template>
+
 
 <style lang="scss" scoped>
 .header {

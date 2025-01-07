@@ -8,14 +8,13 @@
   flex-direction: column;
   min-height: 100vh;
   flex: 1;
-  
 }
 *,
 *::before,
 *::after {
-    box-sizing: border-box;
-    -moz-box-sizing: border-box; 
-    -webkit-box-sizing: border-box; 
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
 }
 html {
   -webkit-text-size-adjust: 100%;
@@ -31,25 +30,31 @@ body {
   margin-right: auto;
 }
 #app {
-  
-    display: flex;
-    flex-direction: column;
-    margin: 32px 32px 0 32px;
-
+  display: flex;
+  flex-direction: column;
+  margin: 32px 32px 0 32px;
 }
 
 .hidden {
   display: none;
 }
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+span {
   margin: 0;
+  padding: 0;
 }
-ul, li {
+ul,
+li {
   list-style: none;
-  
-      margin: 0;
-      padding-left: 0;
+  margin: 0;
+  padding: 0;
 }
+
 
 @media screen and (min-width: 700px) {
   #app {

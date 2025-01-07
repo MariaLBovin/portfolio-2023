@@ -8,10 +8,10 @@ import Cv from '../components/Cv.vue'
 
 <template>
   <div class="startpage">
-    <Presentation/>
-    <SliderStart/>
-    <Cv/>
-    <section class="startpage__contact">
+    <Presentation />
+    <SliderStart id="project"/>
+    <Cv id="cv"/>
+    <section class="startpage__contact" id="contact">
       <h3 class="startpage__contact-heading">Vill du ta en fika?</h3>
       <button class="startpage__contact-button">
         <a href="mailto:maria.bovin@gmail.com">Hör av dig!</a>

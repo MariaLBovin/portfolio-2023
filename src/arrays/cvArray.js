@@ -3,25 +3,25 @@ const jobHistory = [
         place: 'Norstedts förlagsgrupp',
         time: '2017-2022',
         title: 'Kommunikationsansvarig',
-        desc: '- PR - Kommunikationsstrategi - Social mediastrategi - Intern projektledare IT-projekt',
+        desc: 'PR - Kommunikationsstrategi - Social mediastrategi - Intern projektledare IT-projekt',
       },
       {
         place: 'Fackförbundet Vision',
         time: '2017',
         title: 'Kommunikatör',
-        desc: '- Strategisk kommunikation - Utvecklingsledare utvalda IT-projekt ',
+        desc: 'Strategisk kommunikation - Utvecklingsledare utvalda IT-projekt ',
       },
       {
         place: 'Berättarministeriet',
         time: '2016-2017',
         title: 'Digitalt ansvarig',
-        desc: '- Intern projektledare IT-projekt - Kommunikationsstrategi sociala medier - Contentproducent sociala medier ',
+        desc: 'Intern projektledare IT-projekt - Kommunikationsstrategi sociala medier - Contentproducent sociala medier ',
       },
       {
         place: 'Kungliga Operan',
         time: '2011-2016',
         title: 'Kommunikationsansvarig',
-        desc: '- Kommunikationsstrategi - Annonsplanering - Contentproducent sociala medier - KAM ',
+        desc: 'Kommunikationsstrategi - Annonsplanering - Contentproducent sociala medier - KAM ',
       },
 ]
 

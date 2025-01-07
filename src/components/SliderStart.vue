@@ -62,7 +62,7 @@ onUnmounted(() => {
 });
 </script>
 <template>
-  <section class="portfolio-grid">
+  <section class="portfolio-grid" id="project">
     <h2 class="grid-heading">Projekt</h2>
     <ul class="grid-wrapper">
       <li
@@ -78,9 +78,9 @@ onUnmounted(() => {
           />
         </div>
         <div class="grid-content">
-          <h2 class="grid-title">{{ project.title }}</h2>
-          <p class="grid-description">{{ project.description }}</p>
-          <p>{{project.techstack}}</p>
+          <h3 class="grid-title">{{ project.title }}</h3>
+          <p class="grid-text">{{ project.description }}</p>
+          <p class="grid-text"> {{project.techstack}}</p>
           <a :href="project.projektlink" class="grid-link"
             >Titta på projektet</a
           >
@@ -161,32 +161,47 @@ onUnmounted(() => {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
   background: rgba(255, 255, 255, 0.95);
   opacity: 0;
   transition: opacity 0.2s ease;
-  text-align: center;
+  gap: 16px;
+  padding: 0 64px;
 }
 
 .grid-title {
   font-size: 1.5rem;
   margin-bottom: 0.5rem;
+  
+  @media (min-width: 768px) {
+    font-size: 3rem;
+  }
 }
 
-.grid-description {
+.grid-text {
   font-size: 1rem;
   margin-bottom: 1rem;
   color: #666;
+
+    
+  @media (min-width: 768px) {
+    font-size: 2rem;
+  }
 }
 
 .grid-link {
   display: block;
   color: inherit; 
-  text-decoration: none;
+  text-decoration: underline;
+  text-decoration-color: #08c5d5;
 
   &:hover,
   &:focus {
     color: #0056b3;
   }
+
+  @media (min-width: 768px) {
+    font-size: 2rem;
+  }
+
 }
 </style>

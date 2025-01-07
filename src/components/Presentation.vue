@@ -95,6 +95,7 @@ onMounted(() => {
 
         @media screen and (min-width: 700px) {
           font-size: 5rem;
+          margin-bottom: 32px;
         }
     }
 
