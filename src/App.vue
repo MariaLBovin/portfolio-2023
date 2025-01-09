@@ -1,8 +1,12 @@
 <script setup>
-
+import Header from './components/Header.vue';
+import Footer from './components/Footer.vue';
+import Startpage from './views/Startpage.vue';
 </script>
 
 <template>
-      <router-view></router-view>
+      <Header/>
+      <Startpage/>
+      <Footer /> 
   </template>
   

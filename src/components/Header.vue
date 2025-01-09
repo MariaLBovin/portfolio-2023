@@ -11,11 +11,7 @@ const scrollToSection = (id) => {
   const section = document.getElementById(id);
   if (section) {
     section.scrollIntoView({ behavior: 'smooth' });
-
-    if (window.innerWidth < 768){
-      toggleMenu();
-    }
-    
+    menu.value = false; // Stäng menyn efter navigering
   }
 };
 </script>
@@ -23,204 +19,163 @@ const scrollToSection = (id) => {
 <template>
   <header class="header">
     <div class="header__wrapper">
-      <router-link to="/" class="header__logo">
-        <img src="/logo.png" alt="Maria L Bovin">
+      <div class="header__logo">
+        <img src="/logo.png" alt="Maria L Bovin" />
         <p class="header__title">Maria Larsson Bovin</p>
-      </router-link>
-      <nav :class="{ 'hidden': !menu, 'header__nav': menu }" aria-label="main" :aria-hidden="!menu">
-        <ul :class="{ 'header__navlist--showmenu': menu }">
-          <div class="header-nav-wrapper">
-            <li class="header__navitem">
-              <a @click.prevent="scrollToSection('project')" class="header__navitem-link">Portfolio</a>
-            </li>
-            <li class="header__navitem">
-              <a @click.prevent="scrollToSection('cv')" class="header__navitem-link">CV</a>
-            </li>
-            <li class="header__navitem">
-              <a @click.prevent="scrollToSection('contact')" class="header__navitem-link">Kontakt</a>
-            </li>
-          </div>
-        </ul>
-      </nav>
-      <nav class="header__desktop-nav" aria-label="desktopMain">
-        <ul class="header__desktop-navlist">
-          <div class="header__desktop-navwrapper">
-            <li class="header__navitem">
-              <a @click.prevent="scrollToSection('project')" class="header__navitem-link">Portfolio</a>
-            </li>
-            <li class="header__navitem">
-              <a @click.prevent="scrollToSection('cv')" class="header__navitem-link">CV</a>
-            </li>
-            <li class="header__navitem">
-              <a @click.prevent="scrollToSection('contact')" class="header__navitem-link">Kontakt</a>
-            </li>
-          </div>
-        </ul>
-      </nav>
+      </div>
+
       <button
-        class="header__navbutton"
+        class="header__menu-toggle"
         @click="toggleMenu"
-        aria-label="toggle-button"
-        aria-controls="mainNavigation"
         :aria-expanded="menu.toString()"
+        aria-label="Toggle navigation"
       >
-        <span class="header__menu-icon material-icons" v-show="!menu">menu</span>
-        <span class="header__close-icon material-icons" v-show="menu">close</span>
+        <span v-if="!menu">
+          <i class="fa-solid fa-bars"></i>
+        </span>
+        <span v-else>
+          <i class="fa-solid fa-xmark"></i>
+        </span>
       </button>
+
+      <nav :class="['header__nav', { 'header__nav--open': menu }]">
+        <ul class="header__navlist">
+          <li><a @click.prevent="scrollToSection('project')">Portfolio</a></li>
+          <li><a @click.prevent="scrollToSection('cv')">CV</a></li>
+          <li><a @click.prevent="scrollToSection('contact')">Kontakt</a></li>
+        </ul>
+      </nav>
     </div>
   </header>
 </template>
 
-
 <style lang="scss" scoped>
 .header {
-  &__wrapper {
-    position: relative;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    overflow: hidden;
-    align-items: center;
+  width: 100%;
+  padding: 16px;
+  background-color: #fff;
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  position: relative;
 
+  @media screen and (min-width: 768px) {
+    padding: 32px;
+  }
+
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin: 0 auto;
   }
 
   &__logo {
-    display: inline-flex;
+    display: flex;
     align-items: center;
-    width: fit-content;
-    color: black;
-    text-decoration: none;
-
-    &:hover {
-      text-decoration: underline;
-    }
-
-    &:visited {
-      text-decoration: none;
-      
-    }
-
-    @media screen and (min-width: 700px) {
-      margin: 0;
-      flex: 0 0 40%;
-    }
 
     img {
-      width: 50px;
+      height: 40px;
+    }
+
+    .header__title {
+      margin-left: 8px;
+      font-size: 2rem;
+      white-space: nowrap;
+      color: black;
+
+      @media screen and (min-width: 768px) {
+        font-size: 3rem;
+      }
     }
   }
 
-  &__title {
-    padding-left: 5px;
-    font-size: 2rem;
-
-    @media screen and (min-width: 700px) {
-      font-size: 3rem;
-      padding-left: 10px;
-    }
-  }
-
-  &-nav-wrapper {
-    margin-top: 40px;
-    padding:0 32px;
+  &__menu-toggle {
     display: flex;
-    flex-direction: column;
-
-    @media screen and (min-width: 700px) {
-
-    }
-  }
-
-  &__navlist {
-    transform: translateY(-100%);
-    position: fixed;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    color: #fff;
-    list-style: none;
-    padding-top: 4rem;
-    z-index: 1;
-
-    &--showmenu {
-      transform: translateY(0);
-      background-color: #08c5d5;
-      right: 0;
-      left: 65%;
-      top: 0;
-      height: fit-content;
-      padding-bottom: 20px;
-      padding-top: 45px;
-      border-radius: 0 0 0 45px;
-      margin: 0;
-      position: fixed;
-      z-index: 2;
-    }
-  }
-
-  &__navbutton {
-    padding: 4px;
-    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
     background: #08c5d5;
-    cursor: pointer;
-    height: 40px;
-    width: 40px;
+    color: black;
     border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
     z-index: 2;
-    position: fixed;
-    right: 20px;
 
-    @media screen and (min-width: 700px) {
+    @media screen and (min-width: 768px) {
       display: none;
     }
   }
 
-  &__menu-icon, &__close-icon {
-    color: black;
+  &__nav {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #08c5d5;
+    width: 30%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-bottom-left-radius: 45%;
+
+    &--open {
+      display: flex;
+      z-index: 1;
+    }
+
+    @media screen and (min-width: 768px) {
+      display: flex;
+      position: static;
+      flex-direction: row;
+      background-color: transparent;
+      box-shadow: none;
+      width: auto;
+    }
   }
 
-  &__navitem {
-    font-size: 2rem;
-    display: block;
-    padding-bottom: 5px;
+  &__navlist {
+    list-style: none;
+    padding: 64px 16px 16px 0px;
+    margin: 0 32px;
+    display: flex;
+    flex-direction: column;
 
-    &-link {
-      color: black;
-      text-decoration: none;
+    @media screen and (min-width: 768px) {
+      flex-direction: row;
+      gap: 64px;
+      padding: 0;
+      margin: 0
+    }
 
-      &:hover {
-        text-decoration: underline;
-        color:#08c5d5;
+    li {
+      margin: 8px 0;
+
+      @media screen and (min-width: 768px) {
+        margin: 0;
+      }
+
+      a {
+        text-decoration: none;
+        color: black;
+        font-size: 2rem;
+
+        &:hover {
+          text-decoration: underline;
+        }
+
+        @media screen and (min-width: 768px) {
+          font-size: 3rem;
+          &:hover {
+            color: #08c5d5;
+          }
+        }
       }
     }
-    
-
-    @media screen and (min-width: 700px) {
-      font-size: 3rem;
-    }
   }
-
-  &__desktop-nav {
-    display: none;
-
-    @media screen and (min-width: 700px) {
-        display: flex;
-        width: 100%;
-    }
-
-    &list {
-        display: flex;
-        width:100%;
-    }
-    &wrapper {
-        display: flex;
-        flex-direction: row;
-      justify-content: flex-end;
-      gap: 64px;
-      flex: 0 0 90%;
-    }
-  }
-
 }
-
 </style>
