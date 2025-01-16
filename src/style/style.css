@@ -8,6 +8,37 @@
   flex-direction: column;
   min-height: 100vh;
   flex: 1;
+
+  --primary-blue: #08c5d5;
+  --primary-hover: #0056b3;
+  --almost-white: #f9f9f9;
+  --border-white: #e0e0e0;
+  --text-gray: #666;
+  --gap: 16px;
+  /* Brödtext */
+  --mobile-font: 1.6rem; /* 16px */
+  --desktop-font: 1.8rem; /* 18px */
+
+  /* H1 */
+  --mobile-h1: 3.2rem; /* 32px */
+  --desktop-h1: 6.4rem; /* 50px */
+
+  /* H2 */
+  --mobile-h2: 2.8rem; /* 28px */
+  --desktop-h2: 4rem; /* 40px */
+
+  /* H3 */
+  --mobile-h3: 2.4rem; /* 24px */
+  --desktop-h3: 3.2rem; /* 32px */
+
+  /* H4 */
+  --mobile-h4: 2rem; /* 20px */
+  --desktop-h4: 2.8rem; /* 28px */
+
+  /* H5 */
+  --mobile-h5: 1.8rem; /* 18px */
+  --desktop-h5: 2.4rem; /* 24px */
+
 }
 *,
 *::before,
@@ -44,7 +75,8 @@ h3,
 h4,
 h5,
 p,
-span {
+span,
+button {
   margin: 0;
   padding: 0;
 }
@@ -56,9 +88,9 @@ li {
 }
 
 
-@media screen and (min-width: 700px) {
+
+@media screen and (min-width: 768px) {
   #app {
     min-height: 100vh;
-    margin: 64px 0;
   }
 }
