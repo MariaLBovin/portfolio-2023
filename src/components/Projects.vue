@@ -181,8 +181,14 @@ onUnmounted(() => {
   }
 
   &-link {
-    color: var(--primary-blue);
+    color: black;
     text-decoration: underline;
+    text-decoration-color: var(--primary-blue);
+    font-size: var(--mobile-font);
+
+    @media screen and (min-width: 768px) {
+      font-size: var(--desktop-font);
+    }
 
     &:hover,
     &:focus {
