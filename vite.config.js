@@ -9,7 +9,7 @@ export default defineConfig({
       
     }
   },
-  base: "https://marialbovin.web.app/",
+  base: "/",
   define: {
     "process.env": {}
   }
