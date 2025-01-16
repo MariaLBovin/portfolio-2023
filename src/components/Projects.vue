@@ -111,6 +111,7 @@ onUnmounted(() => {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
     overflow: hidden;
+    height: 400px; 
 
     &:hover,
     &:focus {
@@ -120,27 +121,23 @@ onUnmounted(() => {
     }
 
     &--flipped .project-image-wrapper {
-      display: none; 
+      visibility: hidden;
+      opacity: 0;
+      position: absolute;
+      top: 0;
+      left: 0;
     }
 
     &--flipped .project-content {
-      display: flex; 
+      visibility: visible;
+      opacity: 1;
+      position: absolute;
+      top: 0;
+      left: 0;
     }
   }
 
-  &-image-wrapper {
-    opacity: 1;
-    transition: opacity 0.3s ease;
-    display: flex; 
-  }
-
-  &-image {
-    display: block;
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-  }
-
+  &-image-wrapper,
   &-content {
     position: absolute;
     top: 0;
@@ -148,17 +145,38 @@ onUnmounted(() => {
     width: 100%;
     height: 100%;
     display: flex;
-    flex-direction: column;
     justify-content: center;
-    background: var(--almost-white);
-    transition: opacity 0.2s ease;
-    gap: 16px;
-    padding: 0 64px;
+    align-items: center;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    width: 100%;
+    height: 100%;
+  }
 
-    &.active {
-      display: flex;
-      opacity: 1;
-    }
+  &-image-wrapper {
+    background-color: var(--almost-white);
+    visibility: visible;
+    opacity: 1;
+    /* z-index: 2; */
+  }
+
+  &-content {
+    background-color: var(--almost-white);
+    visibility: hidden;
+    opacity: 0;
+    /* z-index: 1; */
+    flex-direction: column;
+    text-align: center;
+    padding: var(--gap);
+    gap: 16px;
+    width: 100%;
+    height: 100%;
+  }
+
+  &-image {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
   }
 
   &-title {
@@ -195,7 +213,7 @@ onUnmounted(() => {
       color: var(--primary-hover);
     }
   }
-
 }
+
 
 </style>

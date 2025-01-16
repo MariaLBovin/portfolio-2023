@@ -59,9 +59,9 @@ onUnmounted(() => {
 
       <nav :class="['header__nav', { 'header__nav--open': menu }]">
         <ul class="header__navlist">
-          <li class="header-navlist-item"><a @click.prevent="scrollToSection('project')">Portfolio</a></li>
-          <li class="header-navlist-item"><a @click.prevent="scrollToSection('cv')">CV</a></li>
-          <li class="header-navlist-item"><a @click.prevent="scrollToSection('contact')">Kontakt</a></li>
+          <li class="header-navlist-item"><a href='#' @click.prevent="scrollToSection('project')">Portfolio</a></li>
+          <li class="header-navlist-item"><a a href='#' @click.prevent="scrollToSection('cv')">CV</a></li>
+          <li class="header-navlist-item"><a a href='#' @click.prevent="scrollToSection('contact')">Kontakt</a></li>
         </ul>
       </nav>
     </div>
