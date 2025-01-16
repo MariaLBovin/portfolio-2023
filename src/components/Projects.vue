@@ -156,14 +156,12 @@ onUnmounted(() => {
     background-color: var(--almost-white);
     visibility: visible;
     opacity: 1;
-    /* z-index: 2; */
   }
 
   &-content {
     background-color: var(--almost-white);
     visibility: hidden;
     opacity: 0;
-    /* z-index: 1; */
     flex-direction: column;
     text-align: center;
     padding: var(--gap);
