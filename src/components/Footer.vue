@@ -11,8 +11,11 @@
 
 <style lang="scss" scoped>
 .footer {
-  padding: 16px 0;
-  text-align: center;
+  padding: var(--gap);
+
+  @media screen and (min-width: 700px) {
+      padding: calc(var(--gap)*2);
+    }
 
   &-text {
     font-size: 14px;

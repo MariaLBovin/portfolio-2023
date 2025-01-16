@@ -82,6 +82,7 @@ onUnmounted(() => {
   background-color: white;
   transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
   max-width: 1223px;
+  z-index: 1;
 
   &--hidden {
     transform: translateY(-100%);

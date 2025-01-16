@@ -111,7 +111,11 @@ onUnmounted(() => {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
     overflow: hidden;
-    height: 400px; 
+    height: 25rem;
+    
+    @media screen and (min-width:768px) {
+      height: 40rem;
+    }
 
     &:hover,
     &:focus {

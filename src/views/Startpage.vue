@@ -19,8 +19,7 @@ import Contact from '../components/Contact.vue';
 
 <style lang="scss" scoped>
 .startpage{
- margin: calc(var(--gap)*2) 0; 
- 
+ margin: calc(var(--gap)*4) 0; 
  flex: 1;
  
   @media screen and (min-width: 700px) {
