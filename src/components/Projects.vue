@@ -106,7 +106,7 @@ onUnmounted(() => {
 
   &-image {
     display: block;
-    max-width: 100%;
+    width: 100%;
     height: auto;
     border-radius: 8px;
   }

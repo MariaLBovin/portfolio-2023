@@ -121,7 +121,6 @@
     &-text {
       font-size: var(--mobile-font);
       font-weight: 400;
-      color: black;
 
       @media screen and (min-width: 768px) {
         font-size: var(--desktop-font);
