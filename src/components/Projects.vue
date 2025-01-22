@@ -5,16 +5,11 @@ import { ref, onMounted, onUnmounted } from "vue";
 const currentTranslate = ref(0);
 const slideWidth = ref(0);
 const slider = ref(null);
-const isFlipped = ref({});
-
-const toggleFlipped = (index) => {
-  isFlipped.value[index] = !isFlipped.value[index]
-}
 
 const updateSlideWidth = () => {
   if (slider.value) {
     slideWidth.value = slider.value.offsetWidth;
-    currentTranslate.value = slideWidth.value; 
+    currentTranslate.value = slideWidth.value;
   }
 };
 
@@ -27,22 +22,12 @@ onUnmounted(() => {
   window.removeEventListener("resize", updateSlideWidth);
 });
 </script>
+
 <template>
   <section class="project" id="project">
     <h2 class="project-heading">Projekt</h2>
     <ul class="project-wrapper">
-      <li
-        v-for="(project, index) in selectedWork"
-        :key="index"
-        class="project-item"
-        :class="{ 'project-item--flipped': isFlipped[index] }"
-        @click="toggleFlipped(index)"
-        @keyup.space.enter="toggleFlipped(index)"
-        tabindex="0"
-        role="button"
-        :aria-expanded="isFlipped[index]"
-        :aria-label="`Visa mer information om ${project.title}`"
-      >
+      <li v-for="(project, index) in selectedWork" :key="index" class="project-item">
         <div class="project-image-wrapper">
           <img
             :src="project.image[0].src"
@@ -50,19 +35,11 @@ onUnmounted(() => {
             class="project-image"
           />
         </div>
-        <div
-          class="project-content"
-          :aria-hidden="!isFlipped[index]"
-          :style="{ display: isFlipped[index] ? 'flex' : 'none' }"
-        >
+        <div class="project-content">
           <h3 class="project-title">{{ project.title }}</h3>
           <p class="project-text">{{ project.description }}</p>
           <p class="project-text">{{ project.techstack }}</p>
-          <a
-            :href="project.projektlink"
-            class="project-link"
-            tabindex="isFlipped[index] ? 0 : -1"
-          >
+          <a :href="project.projektlink" class="project-link">
             Titta på projektet
           </a>
         </div>
@@ -70,7 +47,6 @@ onUnmounted(() => {
     </ul>
   </section>
 </template>
-
 
 <style lang="scss" scoped>
 .project {
@@ -103,75 +79,29 @@ onUnmounted(() => {
   }
 
   &-item {
-    position: relative;
     background: var(--almost-white);
     border: 1px solid var(--border-white);
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer;
     overflow: hidden;
-    height: 25rem;
-    
-    @media screen and (min-width:768px) {
-      height: 40rem;
-    }
+    height: auto;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 
     &:hover,
-    &:focus {
+    &:focus-within {
       transform: translateY(-5px);
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
       border: 1px solid var(--primary-blue);
     }
-
-    &--flipped .project-image-wrapper {
-      visibility: hidden;
-      opacity: 0;
-      position: absolute;
-      top: 0;
-      left: 0;
-    }
-
-    &--flipped .project-content {
-      visibility: visible;
-      opacity: 1;
-      position: absolute;
-      top: 0;
-      left: 0;
-    }
-  }
-
-  &-image-wrapper,
-  &-content {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: opacity 0.3s ease, visibility 0.3s ease;
-    width: 100%;
-    height: 100%;
   }
 
   &-image-wrapper {
-    background-color: var(--almost-white);
-    visibility: visible;
-    opacity: 1;
-  }
-
-  &-content {
-    background-color: var(--almost-white);
-    visibility: hidden;
-    opacity: 0;
-    flex-direction: column;
-    text-align: center;
-    padding: var(--gap);
-    gap: 16px;
     width: 100%;
-    height: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--almost-white);
   }
 
   &-image {
@@ -179,6 +109,11 @@ onUnmounted(() => {
     max-width: 100%;
     height: auto;
     border-radius: 8px;
+  }
+
+  &-content {
+    padding: var(--gap) calc(var(--gap)*2);
+    background-color: var(--almost-white);
   }
 
   &-title {
@@ -216,6 +151,4 @@ onUnmounted(() => {
     }
   }
 }
-
-
 </style>

@@ -85,6 +85,15 @@ const sections = ref([
     border: 1px solid lightgrey;
     padding: var(--gap) calc(var(--gap)*2);
     border-radius: 35px 35px 0 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+    &:hover,
+    &:focus-within {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      border: 1px solid var(--primary-blue);
+    }
+
 
     &-button {
     display: flex;

@@ -11,7 +11,7 @@ import { ref, onMounted } from 'vue';
       <p class="presentation-text">Hej!</p>       
       <h1 class="presentation-title">Jag är Maria,</h1>
       <p class="presentation-description">
-  Stockholmsbaserad frontendutvecklare med förkärlek tillgänglighet, bra användargränssnitt och problemlösning 
+  Stockholmsbaserad utvecklare, digital kommunikatör och projektledare med förkärlek för tillgänglighet, bra användargränssnitt och problemlösning 
   som älskar att skapa roliga och användbara projekt.
 </p>
 
