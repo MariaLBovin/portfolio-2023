@@ -71,7 +71,7 @@ import { ref, onMounted } from 'vue';
         font-size: var(--mobile-font);
         line-height: 1.5;
 
-        @media screen and (min-width: 700px) {
+        @media screen and (min-width: 768px) {
           font-size: var(--desktop-font);
         }
     }

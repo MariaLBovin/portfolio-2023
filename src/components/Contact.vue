@@ -104,7 +104,7 @@
   &-link {
     display: flex;
     align-items: center;
-    gap: 32px;
+    gap: calc(var(--gap)*2);
     cursor: pointer;
     text-decoration: none;
 
@@ -114,7 +114,7 @@
     }
 
     &-symbol {
-      color: #08c5d5;
+      color: var(--primary-blue);
       font-size: 6rem;
     }
 

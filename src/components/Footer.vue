@@ -13,17 +13,17 @@
 .footer {
   padding: var(--gap);
 
-  @media screen and (min-width: 700px) {
+  @media screen and (min-width: 768px) {
       padding: calc(var(--gap)*2);
     }
 
   &-text {
-    font-size: 14px;
-    color: #333;
+    font-size: var(--mobile-font);
+    color: var(--text-gray);
     margin: 0;
 
-    @media screen and (min-width: 700px) {
-      font-size: 16px;
+    @media screen and (min-width: 768px) {
+      font-size: var(--desktop-font);
     }
   }
 }
