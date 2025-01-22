@@ -136,7 +136,6 @@ onUnmounted(() => {
   }
 
   &-link {
-    color: black;
     text-decoration: underline;
     text-decoration-color: var(--primary-blue);
     font-size: var(--mobile-font);
@@ -151,4 +150,17 @@ onUnmounted(() => {
     }
   }
 }
+[data-theme='dark'] {
+  .project-content{
+  background-color: var(--almost-black);
+}
+.project-item {
+  background-color: var(--almost-black);
+
+}
+.project-text {
+  color: var(--text-light-gray)
+}
+}
+
 </style>

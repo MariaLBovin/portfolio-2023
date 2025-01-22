@@ -78,11 +78,12 @@ onUnmounted(() => {
   align-items: center;
   box-sizing: border-box;
   position: fixed;
+  background-color: var(--almost-white);
   top: 0;
   transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
   max-width: 1223px;
   z-index: 1;
-
+  
   &--hidden {
     transform: translateY(-100%);
     opacity: 0;
@@ -204,4 +205,8 @@ onUnmounted(() => {
     }
   }
 }
+[data-theme='dark'] .header {
+  background-color: var(--almost-black);
+}
+
 </style>

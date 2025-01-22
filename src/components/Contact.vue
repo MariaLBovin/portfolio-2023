@@ -77,6 +77,7 @@
   }
   &-img {
     width: 30%;
+    content: url('/kaffe.png');
 
     @media screen and (min-width: 768px) {
       width: 50%;
@@ -127,5 +128,8 @@
       }
     }
   }
+}
+[data-theme='dark'] .contact-img {
+  content: url('/kaffe-vit.png');
 }
 </style>
