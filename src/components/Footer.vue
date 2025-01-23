@@ -30,11 +30,11 @@ onMounted(() => {
       &copy; {{ new Date().getFullYear() }} Maria Larsson Bovin. Alla rättigheter förbehållna.
     </p>
     <button
-      class="theme-toggle"
+      class="footer-toggle-button"
       @click="toggleTheme"
       :aria-label="theme === 'light' ? 'Aktivera mörkt läge' : 'Aktivera ljust läge'"
     >
-      {{ theme === 'light' ? '🌙 Mörkt läge' : '☀️ Ljust läge' }}
+      {{ theme === 'light' ? '🌙 Dark' : '☀️ Light' }}
     </button>
   </footer>
 </template>
@@ -45,7 +45,7 @@ onMounted(() => {
   display: flex;
   justify-content: space-between;
   align-items: center;
-
+  
   @media screen and (min-width: 768px) {
       padding: calc(var(--gap)*2);
     }
@@ -59,19 +59,21 @@ onMounted(() => {
       font-size: var(--desktop-font);
     }
   }
-  .theme-toggle {
+  &-toggle-button {
   padding: 0.5rem 1rem;
-  background-color: var(--primary-blue);
-  color: white;
-  border: none;
+  border: 2px solid var(--primary-hover);
   border-radius: 5px;
   cursor: pointer;
   font-size: var(--mobile-font);
-  transition: background-color 0.3s ease;
+  width: 150px;
 
+    
   &:hover {
     background-color: var(--primary-hover);
   }
+  @media screen and (min-width:768px) {
+      width: 100px;
+    }
 }
 }
 </style>

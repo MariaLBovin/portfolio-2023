@@ -15,7 +15,7 @@
   --border-white: #e0e0e0;
   --text-gray: #666;
   /* Dark mode colors */
-  --primary-blue-dark: #0dd3e3;  
+  --primary-blue-dark: #065F65;  
   --primary-hover-dark: #4fa3ff;  
   --almost-black: #1a1a1a; 
   --border-gray-dark: #444;  
@@ -103,6 +103,7 @@ li {
 }
 button, a {
   color: inherit;
+  background-color: inherit;
 }
 
 

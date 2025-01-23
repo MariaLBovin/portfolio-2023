@@ -57,7 +57,7 @@ onUnmounted(() => {
         </span>
       </button>
 
-      <nav :class="['header-nav', { 'header__nav--open': menu }]">
+      <nav :class="['header-nav', { 'header-nav--open': menu }]">
         <ul class="header-navlist">
           <li class="header-navlist-item"><a href='#' @click.prevent="scrollToSection('project')">Portfolio</a></li>
           <li class="header-navlist-item"><a a href='#' @click.prevent="scrollToSection('cv')">CV</a></li>
@@ -125,7 +125,6 @@ onUnmounted(() => {
     align-items: center;
     justify-content: center;
     background: var(--primary-blue);
-    color: black;
     border: none;
     font-size: var(--mobile-font);
     cursor: pointer;
