@@ -99,7 +99,6 @@ const sections = ref([
     display: flex;
     border: none;
     background-color: transparent;
-    color: black;
     font: inherit;
     font-size: var(--mobile-font);
     width: 100%;
@@ -184,7 +183,7 @@ const sections = ref([
       content: "\2713";
       padding-left: var(--gap);
     }
-    @media screen and (min-width: 700px) {
+    @media screen and (min-width: 768px) {
       font-size: var(--desktop-h5);
     }
   }

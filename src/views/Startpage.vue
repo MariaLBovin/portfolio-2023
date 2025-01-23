@@ -22,7 +22,7 @@ import Contact from '../components/Contact.vue';
  margin: calc(var(--gap)*4) 0; 
  flex: 1;
  
-  @media screen and (min-width: 700px) {
+  @media screen and (min-width: 768px) {
     margin: calc(var(--gap)*5) 0;
   }
 

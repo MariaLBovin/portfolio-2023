@@ -3,7 +3,7 @@
   font-size: 62.5%;
   width: 100%;
   overflow-x: hidden;
-  background-color: #fff;
+  background-color: #f9f9f9;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -14,6 +14,13 @@
   --almost-white: #f9f9f9;
   --border-white: #e0e0e0;
   --text-gray: #666;
+  /* Dark mode colors */
+  --primary-blue-dark: #065F65;  
+  --primary-hover-dark: #4fa3ff;  
+  --almost-black: #1a1a1a; 
+  --border-gray-dark: #444;  
+  --text-light-gray: #ccc; 
+
   --gap: 16px;
   /* Brödtext */
   --mobile-font: 1.6rem; /* 16px */
@@ -39,6 +46,14 @@
   --mobile-h5: 1.8rem; /* 18px */
   --desktop-h5: 2.4rem; /* 24px */
 
+}
+
+[data-theme="dark"] {
+  --primary-blue: var(--primary-blue-dark);
+  --primary-hover: var(--primary-hover-dark);
+  --border-white: var(--border-gray-dark);
+  background-color: var(--almost-black);
+  color: var(--almost-white);
 }
 *,
 *::before,
@@ -86,7 +101,10 @@ li {
   margin: 0;
   padding: 0;
 }
-
+button, a {
+  color: inherit;
+  background-color: inherit;
+}
 
 
 @media screen and (min-width: 768px) {

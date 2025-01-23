@@ -77,6 +77,7 @@
   }
   &-img {
     width: 30%;
+    content: url('/kaffe.png');
 
     @media screen and (min-width: 768px) {
       width: 50%;
@@ -104,7 +105,7 @@
   &-link {
     display: flex;
     align-items: center;
-    gap: 32px;
+    gap: calc(var(--gap)*2);
     cursor: pointer;
     text-decoration: none;
 
@@ -114,19 +115,21 @@
     }
 
     &-symbol {
-      color: #08c5d5;
+      color: var(--primary-blue);
       font-size: 6rem;
     }
 
     &-text {
       font-size: var(--mobile-font);
       font-weight: 400;
-      color: black;
 
       @media screen and (min-width: 768px) {
         font-size: var(--desktop-font);
       }
     }
   }
+}
+[data-theme='dark'] .contact-img {
+  content: url('/kaffe-vit.png');
 }
 </style>
